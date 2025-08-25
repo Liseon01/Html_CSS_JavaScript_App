@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>도서 등록 시스템</title>
+
+  <style>
+    /* body */
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", Arial, sans-serif;
+      margin: 20px;
+      color: #222;
+    }
+
+    /* h1 */
+    h1 {
+      margin: 0 0 16px;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    /* h2 */
+    h2 {
+      margin: 16px 0 8px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    /* form */
+    form {
+      max-width: 640px;
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 8px 12px;
+      border: 1px solid #ddd;
+      padding: 16px;
+    }
+
+    /* label */
+    label {
+      align-self: center;
+      font-weight: 600;
+    }
+
+    /* input */
+    input {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    /* button */
+    button {
+      grid-column: 1 / -1;
+      padding: 10px 14px;
+      border: 1px solid #333;
+      background: #333;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    /* button:hover */
+    button:hover {
+      background: #111;
+    }
+
+    /* table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+    }
+
+    /* th, td */
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px 10px;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    /* th */
+    th {
+      background: #f2f2f2;
+    }
+
+    /* tr:hover */
+    tr:hover {
+      background: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <h1>도서 등록 시스템</h1>
+
+  <div>
+    <h2>도서 등록</h2>
+    <form>
+      <label for="title">제목</label>
+      <input type="text" name="title" id="title" required>
+
+      <label for="author">저자</label>
+      <input type="text" name="author" id="author" required>
+
+      <label for="isbn">ISBN</label>
+      <input type="text" name="isbn" id="isbn" placeholder="예) 979-11-0000-000-0" required>
+
+      <label for="price">가격</label>
+      <input type="text" name="price" id="price" placeholder="예) 15000" pattern="^[0-9]+$" required>
+
+      <label for="publishDate">출판일</label>
+      <input type="date" name="publishDate" id="publishDate" required>
+
+      <button type="submit">도서 등록</button>
+    </form>
+  </div>
+
+  <div>
+    <h2>도서 리스트</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>제목</th>
+          <th>저자</th>
+          <th>ISBN</th>
+          <th>가격</th>
+          <th>출판일</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</body>
+</html>
